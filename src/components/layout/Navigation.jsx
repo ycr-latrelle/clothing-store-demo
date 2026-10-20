@@ -18,7 +18,10 @@ export default function Navigation({ activeId = null, onNavigate }) {
                 aria-current={isActive ? "page" : undefined}
                 onClick={onNavigate}
               >
-                {label}
+                <span>{label}</span>
+                <span className="navigation__arrow" aria-hidden="true">
+                  →
+                </span>
               </a>
             </li>
           );

@@ -1,5 +1,6 @@
 import Header from "../components/layout/Header";
 import HeroSection from "../components/home/HeroSection";
+import CollectionsSection from "../components/home/CollectionsSection";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <CollectionsSection />
       </main>
     </>
   );

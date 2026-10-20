@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   gap: clamp(1.25rem, 4vw, 4.125rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navigation__link {
@@ -24,4 +27,62 @@
 
 .navigation__link:focus-visible {
   outline-color: var(--focus-ring-on-primary);
+}
+
+/* Arrow only exists in the mobile menu */
+.navigation__arrow {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .navigation__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: opacity var(--transition-fast);
+  }
+
+  .navigation__list li:last-child .navigation__link {
+    border-bottom: 0;
+  }
+
+  /* keep the divider look on hover/active instead of the desktop underline */
+  .navigation__link:hover,
+  .navigation__link--active {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .navigation__list li:last-child .navigation__link:hover,
+  .navigation__list li:last-child .navigation__link--active {
+    border-bottom-color: transparent;
+  }
+
+  .navigation__link--active {
+    font-weight: var(--fw-bold, 700);
+  }
+
+  .navigation__arrow {
+    display: inline-block;
+    font-size: 1.125rem;
+    opacity: 0.6;
+    transition:
+      transform var(--transition-fast),
+      opacity var(--transition-fast);
+  }
+
+  .navigation__link:active .navigation__arrow,
+  .navigation__link--active .navigation__arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation__link,
+  .navigation__arrow {
+    transition: none;
+  }
 }
