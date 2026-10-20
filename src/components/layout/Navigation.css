@@ -21,3 +21,7 @@
 .navigation__link--active {
   border-bottom-color: var(--white);
 }
+
+.navigation__link:focus-visible {
+  outline-color: var(--focus-ring-on-primary);
+}
