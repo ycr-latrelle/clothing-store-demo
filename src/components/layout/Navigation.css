@@ -1,0 +1,23 @@
+.navigation__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 4.125rem);
+}
+
+.navigation__link {
+  display: inline-block;
+  padding-block: var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-nav);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.navigation__link:hover,
+.navigation__link--active {
+  border-bottom-color: var(--white);
+}
